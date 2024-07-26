@@ -33,7 +33,7 @@ onMounted(() => {
     ],
     [
       '.card',
-      { opacity: [0, 1] },
+      { opacity: [0, 1], },
       { 
         duration: 2, delay: stagger(0.1) ,
         at: 'titleAnim'
@@ -74,7 +74,7 @@ onMounted(() => {
   align-items: center;
 
   position: relative;
-  height: 25vh;
+  height: 35vh;
 }
 
 .cHead__cover {
@@ -104,7 +104,6 @@ onMounted(() => {
 }
 
 .cHead__titleText {
-  /* margin: 0; padding: 0; */
   margin: 10px 100px;
 }
 

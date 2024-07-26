@@ -97,10 +97,8 @@ function fadeView () {
       >
 
       <Carousel v-if="isLarge"
-        ref="sliderEpt"
-        class="card__slider"
-        :autoplay="3000" :wrap-around="true"
-        :transition="600"
+        ref="sliderEpt" class="card__slider"
+        :wrap-around="true" :transition="600"
       >
 
       <Slide v-for="slide in gallery" :key="slide"

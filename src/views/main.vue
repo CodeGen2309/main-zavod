@@ -1,16 +1,34 @@
 <script setup>
+import { animate, stagger } from "motion"
+import { onMounted } from "vue";
+
 import slider from "../components/slider.vue";
 import tabs from "../components/tabs.vue";
 
 import productCard from "../components/productCard.vue";
 import products from "../mocks/products";
 
+
+onMounted(() => {
+  animate(
+    '.tab',
+    { opacity: [0, 1], translateX: [-100, 0] },
+    { duration: 1, delay: stagger(0.1) }
+  )
+
+  animate(
+    '.tst__cliser',
+    { opacity: [0, 1], translateX: [-100, 0] },
+    { duration: 2 }
+  )
+})
+
 </script>
 
 
 <template>
-  <slider></slider>
-  <tabs></tabs>
+  <slider class="tst__cliser"></slider>
+  <tabs class="tst__tabs"></tabs>
 
   <div class="tst__holder">
     <productCard class="tst_card"
@@ -23,7 +41,7 @@ import products from "../mocks/products";
 </template>
 
 
-<style>
+<style scoped>
 body {
   margin: 0; padding: 0;
   font-family: 'roboto';
@@ -32,12 +50,16 @@ body {
 .tst__holder {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 230px;
+  grid-auto-rows: 250px;
   grid-auto-flow: dense;
   gap: 30px;
 
-  margin: 60px;
+  margin: 60px 150px;
   box-sizing: border-box;
+}
+
+.tst__tabs {
+  margin: 0 200px;
 }
 
 .tst_card {
@@ -53,19 +75,17 @@ body {
 
 @media (width > 1200px) {
   .tst__holder {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @keyframes fadeScroll {
   0% { 
-    /* transform: scale(.9); */
     transform: translateY(100px);
     /* opacity: 0.4; */
   }
   30% { 
     transform: translateY(0);
-    /* transform: scale(1); */
     /* opacity: 1;  */
   }
 
