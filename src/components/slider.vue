@@ -1,10 +1,13 @@
 <script setup>
+// slider libs
 import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
-import { ref } from 'vue'
 import 'vue3-carousel/dist/carousel.css'
+// slider libs
+
 
 import slides from '../mocks/slides.js'
 import { animate } from "motion"
+import { ref } from 'vue'
  
 let textIsShown = ref(true)
 
